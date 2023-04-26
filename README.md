@@ -29,14 +29,14 @@ Please refer to our [paper]() for more details.
 ### URPC2020
 | Methods | Backbone | Pretrain | $AP$ | $AP_{50}$ | $AP_{75}$ | $AP_S$ | $AP_M$ | $AP_L$ | #params | config | model |
 | - | - | - | - | - | - | - | - | - | - | - | - |
-| RFTM-50 | ResNet50 | [cascade_rcnn_r50_dfui](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/Models/cascade_rcnn_r50_dfui.pth) | 48.2 | 80.7 | 50.0 | 19.5 | 41.6 | 53.1 | 75.5M |[config](configs/rftm/rftm_50.py) | [rftm_50_urpc](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/Models/rftm_50_urpc.pth) |
-| RFTM-x101 | ResNetXT101 | [cascade_rcnn_x101_dfui](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/Models/cascade_rcnn_x101_dfui.pth) | 50.9 | 84.7 | 55.2 | 25.5 | 45.1 | 56.9 | 130M | [config](configs/rftm/rftm_x101.py) | [rftm_x101_urpc](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/Models/rftm_x101_urpc.pth)|
+| RFTM-50 | ResNet50 | [cascade_rcnn_r50_dfui](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/first_commit/cascade_rcnn_r50_dfui.pth) | 48.2 | 80.7 | 50.0 | 19.5 | 41.6 | 53.1 | 75.5M |[config](configs/rftm/rftm_50.py) | [rftm_50_urpc](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/first_commit/rftm_50_urpc.pth) |
+| RFTM-x101 | ResNetXT101 | [cascade_rcnn_x101_dfui](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/first_commit/cascade_rcnn_x101_dfui.pth) | 50.9 | 84.7 | 55.2 | 25.5 | 45.1 | 56.9 | 130M | [config](configs/rftm/rftm_x101.py) | [rftm_x101_urpc](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/first_commit/rftm_x101_urpc.pth)|
 
 ### UODD
 | Methods | Backbone | Pretrain | $AP$ | $AP_{50}$ | $AP_{75}$ | $AP_S$ | $AP_M$ | $AP_L$ | #parames | config | model |
 | - | - | - | - | - | - | - | - |-| - | - | - |
-| RFTM-50 | ResNet50 | [cascade_rcnn_r50_dfui](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/Models/cascade_rcnn_r50_dfui.pth) | 50.8 | 89.0 | 53.6 | 33.6 | 50.9 | 62.8 | 75.5M | [config](configs/rftm/rftm_50.py) | [rftm_50_uodd](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/Models/rftm_50_uodd.pth) |
-| RFTM-x101 | ResNetXT101 | [cascade_rcnn_x101_dfui](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/Models/cascade_rcnn_x101_dfui.pth) | 52.7 | 90.8 | 50.0 | 44.7 | 52.4 | 63.5 | 130M | [config](configs/rftm/rftm_x101.py) | [rftm_x101_uodd](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/Models/rftm_x101_uodd.pth) 
+| RFTM-50 | ResNet50 | [cascade_rcnn_r50_dfui](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/first_commit/cascade_rcnn_r50_dfui.pth) | 50.8 | 89.0 | 53.6 | 33.6 | 50.9 | 62.8 | 75.5M | [config](configs/rftm/rftm_50.py) | [rftm_50_uodd](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/first_commit/rftm_50_uodd.pth) |
+| RFTM-x101 | ResNetXT101 | [cascade_rcnn_x101_dfui](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/first_commit/cascade_rcnn_x101_dfui.pth) | 52.7 | 90.8 | 50.0 | 44.7 | 52.4 | 63.5 | 130M | [config](configs/rftm/rftm_x101.py) | [rftm_x101_uodd](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/first_commit/rftm_x101_uodd.pth) 
 
 ## Usage
 ### Installation
