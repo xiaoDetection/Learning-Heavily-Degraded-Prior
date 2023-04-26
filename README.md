@@ -70,3 +70,12 @@ To train RFTM-X101, run:
 ```
 python tools/train.py configs/rftm/rftm_x101.py --work-dir <work_dir>
 ```
+
+## Citing
+```
+@article{Fu2022,
+    title = {{Learning Heavily-Degraded Prior for Underwater Object Detection}},
+    author = {{Fu, Chenping and Fan, Xin and Xiao, Jiewen and Yuan, Wanqi and Liu, Risheng and Luo, Zhongxuan and}},
+    journal = {{IEEE TCSVT}}
+}
+```
