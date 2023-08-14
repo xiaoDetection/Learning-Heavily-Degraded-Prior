@@ -126,7 +126,6 @@ mmcv/
 
 checkpoints/
 
-*.txt
 **/__pycache__
 mmdet/.mim
 mmdet.egg-info/
