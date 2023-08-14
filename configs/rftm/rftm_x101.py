@@ -57,5 +57,5 @@ runner = dict(type='EpochBasedRunnerCustom', max_epochs=24)
 data = dict(
     workers_per_gpu=4
 )
-# cuda in dataset
+# to use cuda in dataloader
 mp_start_method = 'spawn'
