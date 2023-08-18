@@ -94,6 +94,9 @@ To train RFTM-X101, run:
 python tools/train.py configs/rftm/rftm_x101.py --work-dir <work_dir>
 ```
 
+**Notes**:
+ - Please refer to [MMDetection's documentation](https://mmdetection.readthedocs.io/en/v2.22.0/) for more information.
+
 ## Citing
 
 ```
