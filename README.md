@@ -1,4 +1,4 @@
-# Learning Heavily Degraed Piror
+# Learning Heavily Degraded Piror
 
 This repo is the official implementation of [Learning Heavily-Degraded Prior for Underwater Object Detection](https://ieeexplore.ieee.org/document/10113328). It is based on [mmdetection](https://github.com/open-mmlab/mmdetection).
 
