@@ -19,7 +19,7 @@ For the training set of URPC2020 and URPC2021, we use Cascade RCNN to pick up im
 - The DFUI dataset can be downloaded from: [DFUI](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/datasets/dfui.zip)
 - The URPC2020 dataset can be downloaded from: [URPC](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/datasets/urpc2020.zip)
 
-### $HD$ and $LD$ subsets
+### HD and LD subsets
 
 The patches with the transmission value $t$ less than a threshold $T$ ($T$ = 0.5 as a example) from the DFUI and underwater dataset produce the heavily-degraded($HD$) subsets; those having higher transmission values constitute the respective lightly degraded($LD$) subsets. $t$ value can be easily estimated by common UDCP methods.
 
