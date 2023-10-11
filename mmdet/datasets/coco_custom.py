@@ -94,11 +94,13 @@ class CocoDatasetCustom:
                  img_dfui_prefix=None,
                  mask_thr=0.5,
                  test_mode=False):
+        dataset.test_mode = test_mode
         self.dataset = build_dataset(dataset)
         self.dataset.test_mode = test_mode
         self.CLASSES = self.dataset.CLASSES
-        self.flag = self.dataset.flag
         self.PALETTE = getattr(dataset, 'PALETTE', None)
+        if not test_mode:
+            self.flag = self.dataset.flag
 
         # self.img_masked_loader = ImgLoader(img_masked_prefix)
         self.mask_thr = mask_thr
