@@ -58,13 +58,13 @@ class ImgLoader:
 
     def __getitem__(self, idx):
         with self.glob_idx.get_lock():
-            img = self.get_img_by_name(self.names[self.glob_idx.value])
+            name = self.names[self.glob_idx.value]
             self.glob_idx.value += 1
             if self.glob_idx.value % self.length == 0:
                 self.glob_idx.value = 0
                 if self.shuffle:
                     random.shuffle(self.names)
-        return img
+        return self.get_img_by_name(name)
 
 
     def get_img_by_name(self, filename):
