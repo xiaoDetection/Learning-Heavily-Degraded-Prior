@@ -94,11 +94,138 @@ To train RFTM-X101, run:
 python tools/train.py configs/rftm/rftm_x101.py --work-dir <work_dir>
 ```
 
+### Training with custom datasets
+#### Perpare your data
+Please convert your labels into COCO format and place your data into `data/YOUR_DATASET/`. 
+
+The directory structure should be like this:
+```
+Learing-Heavily-Degraed-Prior
+├── data
+│   ├── YOUR_DATASET
+│   │   ├── annotations
+│   │   ├── images
+```
+#### Prepare a config
+Follow the template below to create a new config file `configs/rftm/YOUER_CONFIG.py`.
+```python
+_base_ = './rftm_50.py'
+
+num_classes = YOUR_NUM_CLASSES # number of classes of your dataset
+
+# pass 'num_classes' into model settins
+model = dict( 
+    roi_head=dict(
+        bbox_head=[
+            dict(
+                type='Shared2FCBBoxHead',
+                in_channels=256,
+                fc_out_channels=1024,
+                roi_feat_size=7,
+                num_classes=num_classes,
+                bbox_coder=dict(
+                    type='DeltaXYWHBBoxCoder',
+                    target_means=[0., 0., 0., 0.],
+                    target_stds=[0.1, 0.1, 0.2, 0.2]),
+                reg_class_agnostic=True,
+                loss_cls=dict(
+                    type='CrossEntropyLoss',
+                    use_sigmoid=False,
+                    loss_weight=1.0),
+                loss_bbox=dict(type='SmoothL1Loss', beta=1.0,
+                               loss_weight=1.0)),
+            dict(
+                type='Shared2FCBBoxHead',
+                in_channels=256,
+                fc_out_channels=1024,
+                roi_feat_size=7,
+                num_classes=num_classes,
+                bbox_coder=dict(
+                    type='DeltaXYWHBBoxCoder',
+                    target_means=[0., 0., 0., 0.],
+                    target_stds=[0.05, 0.05, 0.1, 0.1]),
+                reg_class_agnostic=True,
+                loss_cls=dict(
+                    type='CrossEntropyLoss',
+                    use_sigmoid=False,
+                    loss_weight=1.0),
+                loss_bbox=dict(type='SmoothL1Loss', beta=1.0,
+                               loss_weight=1.0)),
+            dict(
+                type='Shared2FCBBoxHead',
+                in_channels=256,
+                fc_out_channels=1024,
+                roi_feat_size=7,
+                num_classes=num_classes,
+                bbox_coder=dict(
+                    type='DeltaXYWHBBoxCoder',
+                    target_means=[0., 0., 0., 0.],
+                    target_stds=[0.033, 0.033, 0.067, 0.067]),
+                reg_class_agnostic=True,
+                loss_cls=dict(
+                    type='CrossEntropyLoss',
+                    use_sigmoid=False,
+                    loss_weight=1.0),
+                loss_bbox=dict(type='SmoothL1Loss', beta=1.0, loss_weight=1.0))
+        ]
+    )
+)
+
+custom_hooks = [
+    dict(type="NumClassCheckHook"),
+    dict(
+        type='OurHook',
+        cfg='configs/rftm/YOUR_CONFIG.py', # config file path
+        cp='checkpoints/cascade_rcnn_r50_dfui.pth', # pre-trained weights
+        priority=30)
+]
+
+img_prefix_dfui='./data/dfui/images/' # DFUI image folder
+img_prefix_urpc_train='YOUR_TRAIN_IMG_PREIFIX' # training image folder
+img_prefix_urpc_test ='YOUR_TEST_IMG_PREFIX'  # testing image folder
+
+ann_train_dfui='./data/dfui/annotations/instances_trainval2017.json' # DFUI annotation
+ann_train_urpc='YOUR_TRAIN_ANNOTATION' # training annotation
+ann_test_urpc='YOUR_TEST_ANNOTATION' # testing annotation
+
+classes = ('CLASS_NAME1', 'CLASS_NAME2') # tuple of class names
+
+# pass the above variables to data settings
+data = dict(
+    train=dict(
+        dataset=dict(
+            classes=classes,
+            ann_file=ann_train_urpc,
+            img_prefix=img_prefix_urpc_train
+        ),
+        img_dfui_prefix=img_prefix_dfui
+    ),
+    val=dict(
+        dataset=dict(
+            classes=classes,
+            ann_file=ann_test_urpc,
+            img_prefix=img_prefix_urpc_test
+        )
+    ),
+    test=
+        dataset=dict(
+            classes=classes,
+            ann_file=ann_test_urpc,
+            img_prefix=img_prefix_urpc_test
+        )
+)
+```
+
+#### Training
+Run command:
+```shell
+python tools/train.py configs/rftm/YOUR_CONFIG.py --work-dir <work_dir>
+```
+
 **Notes**:
  - Please refer to [MMDetection's documentation](https://mmdetection.readthedocs.io/en/v2.22.0/) for more information.
 
 ## Citing
-
 ```
 @article{Fu2022,
     title = {{Learning Heavily-Degraded Prior for Underwater Object Detection}},
