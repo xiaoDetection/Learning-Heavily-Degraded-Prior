@@ -3,6 +3,7 @@
 This repo is the official implementation of [Learning Heavily-Degraded Prior for Underwater Object Detection](https://ieeexplore.ieee.org/document/10113328). It is based on [mmdetection](https://github.com/open-mmlab/mmdetection).
 
 ## Introduction
+> we also provide an introduction in Chinese [here](https://zhuanlan.zhihu.com/p/626316744).
 
 We propose a residual feature transference module (RFTM) to learn a mapping between deep representations of the heavily degraded patches of DFUI and underwater images, and make the mapping as a heavily degraded prior (HDP) for underwater detection. Since the statistical properties are independent to image content, HDP can be learned without the supervision of semantic labels and plugged into popular CNN-based feature extraction networks to improve their performance on underwater object detection. Without bells and whistles, evaluations on URPC2020 and UODD show that our methods outperform CNN-based detectors by a large margin. Our method with higher speeds and less parameters still performs better than transformer-based detectors.
 
@@ -113,7 +114,7 @@ _base_ = './rftm_50.py'
 
 num_classes = YOUR_NUM_CLASSES # number of classes of your dataset
 
-# pass 'num_classes' into model settins
+# pass 'num_classes' to model settings
 model = dict( 
     roi_head=dict(
         bbox_head=[
