@@ -32,7 +32,7 @@ test_pipeline = [
 
 dataset_type = 'CocoDataset'
 # img_prefix
-img_prefix_dfui='./data/dfui/images'
+img_prefix_dfui='./data/dfui/images/'
 img_prefix_urpc_train='./data/urpc2020/images/'
 img_prefix_urpc_test = img_prefix_urpc_train
 
