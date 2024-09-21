@@ -16,8 +16,8 @@ For the training set of URPC2020 and URPC2021, we use Cascade RCNN to pick up im
 
 **Notes**:
 
-- The DFUI dataset can be downloaded from: [DFUI](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/datasets/dfui.zip)
-- The URPC2020 dataset can be downloaded from: [URPC](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/datasets/urpc2020.zip)
+- The DFUI dataset can be downloaded from: [Github](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/datasets/dfui.zip) or [Google Drive](https://drive.google.com/file/d/1BPLuY60weEyINQtjiijDXR1XsQPcCD3E/view?usp=sharing)
+- The URPC2020 dataset can be downloaded from: [Github](https://github.com/xiaoDetection/Learning-Heavily-Degraed-Prior/releases/download/datasets/urpc2020.zip) or [Google Drive](https://drive.google.com/file/d/1e1S42FZb_uOO7pnfLQ2hBq0PS4a6FvfR/view?usp=sharing)
 
 ### HD and LD subsets
 
